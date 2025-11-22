@@ -1,0 +1,86 @@
+/* Light mode code block styling */
+@media (prefers-color-scheme: light) {
+  .prose pre {
+    @apply bg-gray-100 border border-gray-200 rounded-md p-4 overflow-x-auto;
+  }
+
+  .prose pre code {
+    @apply text-gray-800;
+  }
+}
+
+/* Dark mode code block styling */
+.dark .prose pre {
+  @apply bg-[#1E1E1E] border border-white/10;
+}
+
+.dark .prose pre code {
+  @apply text-gray-200 bg-transparent p-0;
+}
+
+.dark .hljs {
+  background: transparent !important;
+  color: #c9d1d9 !important;
+  /* Default text color */
+}
+
+/* Dark Mode Syntax Highlighting Overrides */
+.dark .hljs-comment,
+.dark .hljs-quote {
+  color: #8b949e;
+}
+
+.dark .hljs-keyword,
+.dark .hljs-selector-tag {
+  color: #ff7b72;
+  /* Soft Red */
+}
+
+.dark .hljs-string,
+.dark .hljs-doctag,
+.dark .hljs-template-variable {
+  color: #a5d6ff;
+  /* Light Blue */
+}
+
+.dark .hljs-title,
+.dark .hljs-section,
+.dark .hljs-selector-id {
+  color: #d2a8ff;
+  /* Soft Purple */
+}
+
+.dark .hljs-title.class_,
+.dark .hljs-class .hljs-title {
+  color: #f0883e;
+  /* Orange */
+}
+
+.dark .hljs-type,
+.dark .hljs-built_in {
+  color: #79c0ff;
+  /* Light Blue for types/built-ins */
+}
+
+.dark .hljs-variable,
+.dark .hljs-template-variable,
+.dark .hljs-attr,
+.dark .hljs-attribute {
+  color: #79c0ff;
+  /* Light Blue for attributes/variables */
+}
+
+.dark .hljs-literal,
+.dark .hljs-symbol,
+.dark .hljs-bullet,
+.dark .hljs-meta {
+  color: #ff7b72;
+}
+
+.dark .hljs-tag,
+.dark .hljs-name,
+.dark .hljs-selector-class,
+.dark .hljs-selector-attr {
+  color: #7ee787;
+  /* Soft Green */
+}

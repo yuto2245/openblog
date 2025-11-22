@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenBLog</title>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;700;800&family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            display: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            background: 'var(--color-background)',
+            surface: 'var(--color-surface)',
+            surfaceHighlight: 'var(--color-surface-highlight)',
+            primary: 'var(--color-text-primary)',
+            secondary: 'var(--color-text-secondary)',
+            accent: 'var(--color-accent)',
+            accentHover: 'var(--color-accent-hover)',
+            border: 'var(--color-border)',
+          },
+          boxShadow: {
+            'sharp': '0 0 0 1px var(--color-border)',
+            'elevation': '0 10px 30px -10px rgba(0,0,0,0.5)',
+          },
+          typography: {
+            DEFAULT: {
+              css: {
+                color: 'var(--color-text-secondary)',
+                'h1, h2, h3, h4': {
+                  color: 'var(--color-text-primary)',
+                  fontFamily: 'Outfit, sans-serif',
+                  fontWeight: '700',
+                },
+                strong: { color: 'var(--color-text-primary)' },
+                a: { color: 'var(--color-accent)', textDecoration: 'none' },
+                'a:hover': { color: 'var(--color-accent-hover)' },
+                code: {
+                  color: 'var(--color-text-primary)',
+                  fontFamily: 'JetBrains Mono',
+                  backgroundColor: 'var(--color-surface-highlight)',
+                  padding: '0.2em 0.4em',
+                  borderRadius: '0.25rem',
+                  fontWeight: '400',
+                },
+                pre: {
+                  backgroundColor: 'var(--color-surface)',
+                  borderRadius: '0',
+                  border: '1px solid var(--color-border)',
+                },
+              }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "marked": "https://esm.sh/marked@12.0.0",
+    "highlight.js": "https://esm.sh/highlight.js@11.9.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.330.0"
+  }
+}
+</script>
+  <style>
+    :root {
+      /* Light Mode Defaults */
+      --color-background: #F8FAFC;
+      --color-surface: #FFFFFF;
+      --color-surface-highlight: #F1F5F9;
+      --color-text-primary: #0F172A;
+      --color-text-secondary: #64748B;
+      --color-accent: #3B82F6;
+      --color-accent-hover: #2563EB;
+      --color-border: rgba(0, 0, 0, 0.1);
+    }
+
+    .dark {
+      /* Dark Mode Overrides */
+      --color-background: #050505;
+      --color-surface: #121212;
+      --color-surface-highlight: #1E1E1E;
+      --color-text-primary: #FFFFFF;
+      --color-text-secondary: #A1A1AA;
+      --color-accent: #3B82F6;
+      --color-accent-hover: #2563EB;
+      --color-border: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Minimalist Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--color-background);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-surface-highlight);
+      border-radius: 0px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-text-secondary);
+    }
+
+    body {
+      background-color: var(--color-background);
+      color: var(--color-text-primary);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Smooth text rendering */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-background antialiased selection:bg-accent selection:text-white">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
